@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<bean id="logger" class="com.ryan.spring.test.Logger"
+		autowire="byType">
+	</bean>
+	<bean id="filewriter" class="com.ryan.spring.test.FileWriter">
+	</bean>
+	<bean id="consolewriter"
+		class="com.ryan.spring.test.ConsoleWriter">
+	</bean>
+</beans>
