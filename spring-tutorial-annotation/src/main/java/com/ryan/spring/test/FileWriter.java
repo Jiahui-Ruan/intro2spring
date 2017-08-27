@@ -1,7 +1,9 @@
 package com.ryan.spring.test;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 @Qualifier("filewriter")
 public class FileWriter implements LogWritter{
 

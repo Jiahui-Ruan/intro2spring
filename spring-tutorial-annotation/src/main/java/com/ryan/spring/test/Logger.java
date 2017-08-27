@@ -1,16 +1,24 @@
 package com.ryan.spring.test;
 
-import javax.annotation.Resource;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Inject;
+import javax.inject.Named;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Logger {
 	private ConsoleWriter consoleWriter;
 	private LogWritter fileWriter;
 	
-	@Resource
+	@Inject
+	@Named(value="consoleWriter")
 	public void setConsoleWriter(ConsoleWriter consoleWriter) {
 		this.consoleWriter = consoleWriter;
 	}
-	@Resource(name="fileWriter")
+	@Inject
+	@Named(value="fileWriter")
 	public void setFileWriter(LogWritter fileWriter) {
 		this.fileWriter = fileWriter;
 	}
@@ -20,5 +28,15 @@ public class Logger {
 	}
 	public void writeFile(String text) {
 		fileWriter.write(text);
+	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("init");
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("destroy");
 	}
 }
