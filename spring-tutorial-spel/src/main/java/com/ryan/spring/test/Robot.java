@@ -16,12 +16,12 @@ public class Robot {
 	}
 	
 	@Autowired
-	public void setId(@Value("111") String id) {
+	public void setId(@Value("#{randomText.getText()?.length()}") String id) {
 		this.id = id;
 	}
 
 	@Autowired
-	public void setSpeech(@Value("come back") String speech) {
+	public void setSpeech(@Value("#{randomText.getText()}") String speech) {
 		this.speech = speech;
 	}
 

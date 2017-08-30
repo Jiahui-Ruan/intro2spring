@@ -5,10 +5,5 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	
-	<bean id="robot" class="com.ryan.spring.test.Robot">
-		<property name="id" value="#{randomText.getText()?.length()}"></property>
-		<property name="speech" value="#{randomText.getText()}"></property>
-	</bean>
-	<bean id="randomText" class="com.ryan.spring.test.RandomText"></bean>
+	<context:component-scan base-package="com.ryan.spring.test"></context:component-scan>
 </beans>
