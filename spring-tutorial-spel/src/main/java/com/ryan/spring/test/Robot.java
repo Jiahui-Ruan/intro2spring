@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Robot {
 
-	private int id = 0;
+	private String id = "Default robot";
 	private String speech = "hello";
 	
 	public void speak() {
@@ -16,7 +16,7 @@ public class Robot {
 	}
 	
 	@Autowired
-	public void setId(@Value("111") int id) {
+	public void setId(@Value("111") String id) {
 		this.id = id;
 	}
 
