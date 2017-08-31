@@ -21,7 +21,9 @@ public class Robot {
 	}
 
 	@Autowired
-	public void setSpeech(@Value("#{randomText.getText()}") String speech) {
+	// new java.util.Date().toString()
+	// T(Math).PI
+	public void setSpeech(@Value("#{}") String speech) {
 		this.speech = speech;
 	}
 
